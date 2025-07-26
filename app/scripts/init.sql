@@ -1,0 +1,6 @@
+
+CREATE TABLE IF NOT EXISTS contract_state (
+    id SERIAL PRIMARY KEY,
+    value TEXT NOT NULL,
+    synced_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
