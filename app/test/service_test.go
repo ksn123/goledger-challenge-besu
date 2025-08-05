@@ -9,7 +9,7 @@ import (
 	"github.com/joho/godotenv"
 	"github.com/stretchr/testify/assert"
 
-	"app/services" // replace with your actual module path
+	"app/services"
 )
 
 func TestCallContract(t *testing.T) {
@@ -28,11 +28,13 @@ func TestExecContract(t *testing.T) {
 }
 
 func TestSyncValue(t *testing.T) {
+	_ = godotenv.Load("../.env")
 	_, err := services.SyncValue()
 	assert.NoError(t, err)
 }
 
 func TestCompareContractWithDB(t *testing.T) {
+	_ = godotenv.Load("../.env")
 	match, err := services.CompareContractWithDB()
 	assert.NoError(t, err)
 	assert.IsType(t, true, match)

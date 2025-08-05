@@ -140,15 +140,15 @@ The REST API will be running at: `http://localhost:8080`
 | GET    | `/get`    | Read the current value from the contract    |
 | POST   | `/set`    | Set a new value in the smart contract       |
 | POST   | `/sync`   | Sync contract value to PostgreSQL database  |
-| GET    | `/check`  | Compare blockchain and database values      |
+| POST   | `/check`  | Compare blockchain and database values      |
 
 ####  Example Calls
 
 ```bash
-curl -X POST http://localhost:8080/set
 curl -X GET http://localhost:8080/get
+curl -X POST http://localhost:8080/set
 curl -X POST http://localhost:8080/sync
-curl -X GET http://localhost:8080/check
+curl -X POST http://localhost:8080/check
 ```
 
 ---
